@@ -26,10 +26,11 @@ function inter_trm_dashboard_widget_function()
     jQuery(document).ready(function($) {
       $('#inter_update_trm_button').on('click', function(e) {
 
+        e.target.disabled = true;
+        e.preventDefault();
+
         let textButton = e.target.textContent;
 
-        e.preventDefault();
-        e.target.disabled = true;
         e.target.textContent = 'Actualizando...';
         e.target.classList.add('button-disabled');
         e.target.classList.remove('button-secundary');
