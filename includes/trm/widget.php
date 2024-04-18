@@ -25,6 +25,9 @@ function inter_trm_dashboard_widget_function()
   <script type="text/javascript">
     jQuery(document).ready(function($) {
       $('#inter_update_trm_button').on('click', function(e) {
+
+        let textButton = e.target.textContent;
+
         e.preventDefault();
         e.target.textContent = 'Actualizando...';
         e.target.classList.add('button-disabled');
@@ -48,15 +51,15 @@ function inter_trm_dashboard_widget_function()
             $('#inter_update_trm_result').html(trm); // Actualizar el valor de la TRM en el widget
 
             setTimeout(() => {
-              $('#inter_update_trm_button').html('Actualizar TRM manualmente');
+              $('#inter_update_trm_button').textContent = textButton;
               e.target.classList.add('button-secundary');
               e.target.classList.remove('button-disabled');
             }, 3000);
           },
           error: function() {
-            $('#inter_update_trm_button').html('Error al actualizar.');
+            $('#inter_update_trm_button').html('Error al intentar actualizar');
             setTimeout(() => {
-              $('#inter_update_trm_button').html('Actualizar TRM manualmente');
+              $('#inter_update_trm_button').textContent = textButton;
               e.target.classList.add('button-secundary');
               e.target.classList.remove('button-disabled');
             }, 3000);
