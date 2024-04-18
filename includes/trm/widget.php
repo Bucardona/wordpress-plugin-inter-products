@@ -47,7 +47,7 @@ function inter_trm_dashboard_widget_function()
               maximumFractionDigits: 2
             }).format(trm)
 
-            $('#inter_update_trm_button').html(trmRes.message); // Mostrar la respuesta del servidor en el div
+            $('#inter_update_trm_button').html(trmRes.message);
             $('#inter_update_trm_result').html(trm); // Actualizar el valor de la TRM en el widget
 
             $('#inter_update_trm_button').html(textButton);
