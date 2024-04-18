@@ -1,10 +1,10 @@
 <?php
 function inter_products_template_redirect($template)
 {
-  $custom_page = get_query_var('custom_page', false);
+  $page_slug = get_query_var('inter_custom_page', false);
 
-  if ($custom_page) {
-    $template = locate_template("elementor-templates/{$custom_page}.php");
+  if ($page_slug) {
+    $template = locate_template("elementor-templates/{$page_slug}.php");
   }
 
   return $template;
