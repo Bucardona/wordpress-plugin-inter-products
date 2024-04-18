@@ -15,7 +15,8 @@ defined('ABSPATH') or die('No script kiddies please!');
 // Incluir las funciones de reescritura y plantillas.
 require_once(plugin_dir_path(__FILE__) . 'includes/productos/rewrite-rules.php');
 require_once(plugin_dir_path(__FILE__) . 'includes/productos/template-handler.php');
-//require_once(plugin_dir_path(__FILE__) . 'includes/woocommerce-hooks.php');
+require_once(plugin_dir_path(__FILE__) . 'includes/trm/trm.php');
+//require_once(plugin_dir_path(__FILE__) . 'includes/productos/woocommerce-hooks.php');
 
 // Activar las reglas de reescritura al activar el plugin.
 register_activation_hook(__FILE__, 'flush_rewrite_rules');
