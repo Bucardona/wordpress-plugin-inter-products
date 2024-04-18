@@ -29,7 +29,7 @@ function inter_trm_dashboard_widget_function()
         e.target.disabled = true;
         e.preventDefault();
 
-        let textButton = e.target.textContent;
+        const textButton = e.target.textContent;
 
         e.target.textContent = 'Actualizando...';
         e.target.classList.add('button-disabled');
