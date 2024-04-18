@@ -16,8 +16,8 @@ function inter_trm_add_dashboard_widgets()
 function inter_trm_dashboard_widget_function()
 {
   $interTRM = new InterTRM();
-  echo '<p>TRM Almacenada en WordPress: USD $' . number_format($interTRM->getTrmInter(), 2, ',', '.')  . '</p>';
-  echo '<p>TRM de la API: USD $<span id="inter_update_trm_result">' . number_format($interTRM->getTrmApi(), 2, ',', '.') . '</span></p>';
+  echo '<p>TRM Almacenada en WordPress: COP $' . number_format($interTRM->getTrmInter(), 2, ',', '.')  . '</p>';
+  echo '<p>TRM de la API: COP $<span id="inter_update_trm_result">' . number_format($interTRM->getTrmApi(), 2, ',', '.') . '</span></p>';
   echo "<button id='inter_update_trm_button' class='button button-secundary'>Actualizar TRM manualmente</button>";
 
   // Incluir JavaScript para manejar el evento del clic del botón
@@ -42,7 +42,7 @@ function inter_trm_dashboard_widget_function()
             let trmRes = JSON.parse(response);
             let trm = trmRes.value ? Number(trmRes.value) : 0;
 
-            trm = new Intl.NumberFormat('en-US', {
+            trm = new Intl.NumberFormat('es-CO', {
               minimumFractionDigits: 2,
               maximumFractionDigits: 2
             }).format(trm)
