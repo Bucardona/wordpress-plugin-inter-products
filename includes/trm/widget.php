@@ -13,6 +13,6 @@ function inter_trm_add_dashboard_widgets()
 function inter_trm_dashboard_widget_function()
 {
   $interTRM = new InterTRM();
-  echo '<p>TRM Almacenada en WordPress: USD $' . number_format($$interTRM->getTrmInter(), 2, ',', '.')  . '</p>';
-  echo '<p>TRM de la API: USD $' . number_format($$interTRM->getTrmApi(), 2, ',', '.') . '</p>';
+  echo '<p>TRM Almacenada en WordPress: USD $' . number_format($interTRM->getTrmInter(), 2, ',', '.')  . '</p>';
+  echo '<p>TRM de la API: USD $' . number_format($interTRM->getTrmApi(), 2, ',', '.') . '</p>';
 }
