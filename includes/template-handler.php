@@ -7,6 +7,7 @@ function inter_products_template_redirect($template)
 
   if ($page_slug) {
     $template = locate_template("elementor-templates/{$page_slug}.php");
+    var_dump($template);
   }
 
   return $template;
