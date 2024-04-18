@@ -1,6 +1,6 @@
 <?php
 
-class interTRM
+class InterTRM
 {
   //Función para obtener la TRM desde la API
   public function getTrmApi()
