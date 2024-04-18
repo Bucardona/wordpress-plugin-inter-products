@@ -2,7 +2,7 @@
 // Hook para agregar un widget en el dashboard de WordPress
 add_action('wp_dashboard_setup', 'inter_trm_add_dashboard_widgets');
 // Hook para actualizar con ajax la TRM
-add_action('wp_ajax_inter_inter_update_trm_widget', 'update_trm_ajax_handler');
+add_action('wp_ajax_inter_inter_update_trm_widget', 'inter_update_trm_ajax_handler');
 
 function inter_trm_add_dashboard_widgets()
 {
@@ -23,14 +23,12 @@ function inter_trm_dashboard_widget_function()
   // Incluir JavaScript para manejar el evento del clic del botón
 ?>
   <script type="text/javascript">
+    const textButton = e.target.textContent;
     jQuery(document).ready(function($) {
       $('#inter_update_trm_button').on('click', function(e) {
 
-        e.target.disabled = true;
         e.preventDefault();
-
-        const textButton = e.target.textContent;
-
+        e.target.disabled = true;
         e.target.textContent = 'Actualizando...';
         e.target.classList.add('button-disabled');
         e.target.classList.remove('button-secundary');
@@ -74,7 +72,7 @@ function inter_trm_dashboard_widget_function()
 
 }
 
-function update_trm_ajax_handler()
+function inter_update_trm_ajax_handler()
 {
   // Suponiendo que tienes una clase y método para actualizar la TRM
   $result = (new InterTRM())->updateTrmInter();  // Llama al método que actualiza la TRM
