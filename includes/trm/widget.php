@@ -57,6 +57,8 @@ function inter_trm_dashboard_widget_function()
             $('#inter_update_trm_button').html('Error al actualizar.');
             setTimeout(() => {
               $('#inter_update_trm_button').html('Actualizar TRM manualmente');
+              e.target.classList.add('button-secundary');
+              e.target.classList.remove('button-disabled');
             }, 3000);
           }
         });
