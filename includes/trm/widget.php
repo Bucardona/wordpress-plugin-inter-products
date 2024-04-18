@@ -16,8 +16,8 @@ function inter_trm_add_dashboard_widgets()
 function inter_trm_dashboard_widget_function()
 {
   $interTRM = new InterTRM();
-  echo '<p>TRM Almacenada en WordPress: COP $' . number_format($interTRM->getTrmInter(), 2, ',', '.')  . '</p>';
-  echo '<p>TRM de la API: COP $<span id="inter_update_trm_result">' . number_format($interTRM->getTrmApi(), 2, ',', '.') . '</span></p>';
+  echo '<p>TRM Almacenada en WordPress: COP $<span id="inter_update_trm_result">' . number_format($interTRM->getTrmInter(), 2, ',', '.')  . '</span></p>';
+  echo '<p>TRM de la API: COP $' . number_format($interTRM->getTrmApi(), 2, ',', '.') . '</p>';
   echo "<button id='inter_update_trm_button' class='button button-secundary'>Actualizar TRM manualmente</button>";
 
   // Incluir JavaScript para manejar el evento del clic del botón
