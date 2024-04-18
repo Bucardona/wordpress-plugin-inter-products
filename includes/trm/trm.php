@@ -1,6 +1,8 @@
 <?php
 // Incluir las definiciones de funciones adicionales
 include_once('trm-functions.php');
+// Incluir widget de TRM
+include_once('widget.php');
 
 // Programar la actualización de la TRM al inicializar WordPress
 add_action('init', 'inter_programar_actualizacion_trm');
