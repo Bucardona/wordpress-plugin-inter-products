@@ -52,6 +52,7 @@ class InterTRM
       set_transient('inter_trm', $trm, DAY_IN_SECONDS);
       wp_cache_delete('inter_trm', 'options');
     }
+    return $trm;
   }
 }
 
