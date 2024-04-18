@@ -13,8 +13,8 @@ License: GPL2
 defined('ABSPATH') or die('No script kiddies please!');
 
 // Incluir las funciones de reescritura y plantillas.
-require_once(plugin_dir_path(__FILE__) . 'includes/rewrite-rules.php');
-require_once(plugin_dir_path(__FILE__) . 'includes/template-handler.php');
+require_once(plugin_dir_path(__FILE__) . 'includes/productos/rewrite-rules.php');
+require_once(plugin_dir_path(__FILE__) . 'includes/productos/template-handler.php');
 //require_once(plugin_dir_path(__FILE__) . 'includes/woocommerce-hooks.php');
 
 // Activar las reglas de reescritura al activar el plugin.
