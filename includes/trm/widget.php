@@ -29,6 +29,7 @@ function inter_trm_dashboard_widget_function()
         let textButton = e.target.textContent;
 
         e.preventDefault();
+        e.target.disabled = true;
         e.target.textContent = 'Actualizando...';
         e.target.classList.add('button-disabled');
         e.target.classList.remove('button-secundary');
@@ -50,11 +51,10 @@ function inter_trm_dashboard_widget_function()
             $('#inter_update_trm_button').html(trmRes.message); // Mostrar la respuesta del servidor en el div
             $('#inter_update_trm_result').html(trm); // Actualizar el valor de la TRM en el widget
 
-            setTimeout(() => {
-              $('#inter_update_trm_button').textContent = textButton;
-              e.target.classList.add('button-secundary');
-              e.target.classList.remove('button-disabled');
-            }, 3000);
+            $('#inter_update_trm_button').textContent = textButton;
+            e.target.classList.add('button-secundary');
+            e.target.classList.remove('button-disabled');
+            e.target.disabled = false;
           },
           error: function() {
             $('#inter_update_trm_button').html('Error al intentar actualizar');
@@ -62,6 +62,7 @@ function inter_trm_dashboard_widget_function()
               $('#inter_update_trm_button').textContent = textButton;
               e.target.classList.add('button-secundary');
               e.target.classList.remove('button-disabled');
+              e.target.disabled = false;
             }, 3000);
           }
         });
