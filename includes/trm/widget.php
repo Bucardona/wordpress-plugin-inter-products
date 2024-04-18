@@ -23,10 +23,10 @@ function inter_trm_dashboard_widget_function()
   // Incluir JavaScript para manejar el evento del clic del botón
 ?>
   <script type="text/javascript">
-    const textButton = e.target.textContent;
     jQuery(document).ready(function($) {
       $('#inter_update_trm_button').on('click', function(e) {
 
+        const textButton = e.target.textContent;
         e.preventDefault();
         e.target.disabled = true;
         e.target.textContent = 'Actualizando...';
