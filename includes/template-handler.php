@@ -12,7 +12,7 @@ function inter_products_template_redirect($template)
 
     // Comprueba si el archivo de plantilla existe
     if (file_exists($template_file)) {
-      return $template_file;
+      $template = $template_file;
     }
   }
 
