@@ -3,8 +3,6 @@ function inter_products_template_redirect($template)
 {
   $page_slug = get_query_var('inter_custom_page', false);
 
-  var_dump($page_slug);
-
   if ($page_slug) {
     // Construye la ruta al archivo de plantilla dentro del plugin
     $plugin_path = plugin_dir_path(__FILE__); // Obtiene la ruta del directorio del archivo actual
