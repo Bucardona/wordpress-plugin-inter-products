@@ -2,9 +2,9 @@
 
 class interTRM
 {
-  private function getTrmFromApi()
+  //Función para obtener la TRM desde la API
+  public function getTrmApi()
   {
-    // Lógica para obtener la TRM
     $apiUrl = 'https://api-trm-inter.onrender.com/api/?date=today';
     $response = wp_remote_get($apiUrl, array('headers' => ['Cache-Control' => 'no-cache']));
 
@@ -25,9 +25,28 @@ class interTRM
     }
   }
 
+  //Función para obtener la TRM almacenada
+  public function getTrmInter()
+  {
+    $trm = get_transient('inter_trm');
+    if (!$trm) {
+      $trm = get_option('inter_trm', 0); // Obtiene la TRM almacenada
+      set_transient('inter_trm', $trm, DAY_IN_SECONDS); // Guarda en el cache por un día
+    }
+    return $trm;
+  }
+
+  //Función para convertir de COP a USD
+  public function usdToCop($price)
+  {
+    $trm = $this->getTrmInter(); // Obtiene la TRM almacenada
+    return $price * $trm; // Realiza la conversión del precio
+  }
+
+  //Función para almacenar la TRM en la base de datos
   public function updateTrmInter()
   {
-    $trm = $this->getTrmFromApi();
+    $trm = $this->getTrmApi();
     if ($trm) {
       update_option('inter_trm', $trm);
       set_transient('inter_trm', $trm, DAY_IN_SECONDS);
@@ -36,23 +55,6 @@ class interTRM
   }
 }
 
-//Función para obtener la TRM almacenada
-function inter_getTrmInter()
-{
-  $trm = get_transient('inter_trm');
-  if (!$trm) {
-    $trm = get_option('inter_trm', 0); // Obtiene la TRM almacenada
-    set_transient('inter_trm', $trm, DAY_IN_SECONDS); // Guarda en el cache por un día
-  }
-  return $trm;
-}
-
-//Función para convertir de COP a USD
-function inter_usdToCop($price)
-{
-  $trm = inter_getTrmInter(); // Obtiene la TRM almacenada
-  return $price * $trm; // Realiza la conversión del precio
-}
 
 //Función para almacenar la TRM en la base de datos
 /*function inter_updateTrmInter()
