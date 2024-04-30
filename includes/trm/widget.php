@@ -2,7 +2,7 @@
 // Hook para agregar un widget en el dashboard de WordPress
 add_action('wp_dashboard_setup', 'inter_trm_add_dashboard_widgets');
 // Hook para actualizar con ajax la TRM
-add_action('wp_ajax_inter_inter_update_trm_widget', 'inter_update_trm_ajax_handler');
+add_action('wp_ajax_inter_update_trm_widget', 'inter_update_trm_ajax_handler');
 
 function inter_trm_add_dashboard_widgets()
 {
