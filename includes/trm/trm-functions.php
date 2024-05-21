@@ -5,7 +5,7 @@ class InterTRM
   //Función para obtener la TRM desde la API
   public function getTrmApi()
   {
-    $apiUrl = 'https://api-trm-inter.onrender.com/api/?date=today';
+    $apiUrl = 'https://trm.joyeriainter.com/api/?date=today';
     $response = wp_remote_get($apiUrl, array('headers' => ['Cache-Control' => 'no-cache']));
 
     if (is_wp_error($response)) {
