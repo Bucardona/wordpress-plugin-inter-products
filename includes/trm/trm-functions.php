@@ -13,11 +13,10 @@ class InterTRM
     $apiUrl = $this->getTrmApiUrl();
 
     $headers = array(
+      'user-agent' => 'WordPress TRM API Client',
       'headers' => array(
         'Accept' => 'application/json',
-        'Content-Type' => 'application',
         'Cache-Control' => 'no-cache',
-        'user-agent' => 'WordPress TRM API Client',
       )
     );
     $response = wp_remote_get($apiUrl, $headers);
