@@ -2,10 +2,15 @@
 
 class InterTRM
 {
+
+  public function getTrmApiUrl()
+  {
+    return 'https://interapitrm.mdigital-2f5.workers.dev/?date=today';
+  }
   //Función para obtener la TRM desde la API
   public function getTrmApi()
   {
-    $apiUrl = 'https://trm.joyeriainter.com/api/?date=today';
+    $apiUrl = $this->getTrmApiUrl();
     $response = wp_remote_get($apiUrl, array('headers' => ['Cache-Control' => 'no-cache']));
 
     if (is_wp_error($response)) {

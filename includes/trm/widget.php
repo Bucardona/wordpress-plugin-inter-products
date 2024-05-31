@@ -19,6 +19,7 @@ function inter_trm_dashboard_widget_function()
   echo '<p>TRM Almacenada en WordPress: COP $<span id="inter_update_trm_result">' . number_format($interTRM->getTrmInter(), 2, ',', '.')  . '</span></p>';
   echo '<p>TRM de la API: COP $' . number_format($interTRM->getTrmApi(), 2, ',', '.') . '</p>';
   echo "<button id='inter_update_trm_button' class='button button-secundary'>Actualizar TRM manualmente</button>";
+  echo '<p style="font-size: .75em;margin-bottom:0">Api TRM: <a href="' . $interTRM->getTrmApiUrl() . '" target="_blank">' . $interTRM->getTrmApiUrl() . '</a></p>';
 
   // Incluir JavaScript para manejar el evento del clic del botón
 ?>
