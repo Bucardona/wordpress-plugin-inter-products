@@ -24,11 +24,6 @@ class InterTRM
       'sec-ch-ua: \"Google Chrome\";v=\"125\", \"Chromium\";v=\"125\", \"Not.A/Brand\";v=\"24\"',
       'sec-ch-ua-mobile: ?0',
       'sec-ch-ua-platform: \"Windows\"',
-      'sec-fetch-dest: document',
-      'sec-fetch-mode: navigate',
-      'sec-fetch-site: none',
-      'sec-fetch-user: ?1',
-      'upgrade-insecure-requests: 1',
       'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36'
     ]);
 
