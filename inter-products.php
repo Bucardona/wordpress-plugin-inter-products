@@ -3,7 +3,7 @@
 Plugin Name: Inter Products
 Plugin URI: https://joyeriainter.com
 Description: Plugin para la gestión personalizada de productos en la tienda online de Joyería Inter con Headless CMS
-Version: 0.1.2
+Version: 0.1.3
 Author: Sebastian Cardona
 Author URI: https://scardona.me
 License: GPL2
