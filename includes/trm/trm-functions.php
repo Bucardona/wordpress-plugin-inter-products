@@ -5,7 +5,7 @@ class InterTRM
 
   public function getTrmApiUrl()
   {
-    return 'https://interapitrm.mdigital-2f5.workers.dev/?date=today';
+    return 'https://trm.joyeriainter.com/?date=today';
   }
   //Función para obtener la TRM desde la API
   public function getTrmApi()
