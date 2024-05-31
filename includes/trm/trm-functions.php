@@ -5,13 +5,13 @@ class InterTRM
 
   public function getTrmApiUrl()
   {
-    return 'https://interapitrm.mdigital-2f5.workers.dev/?date=today';
+    return 'https://interapitrm.mdigital-2f5.workers.dev?date=today';
   }
   //Función para obtener la TRM desde la API
   public function getTrmApi()
   {
     $apiUrl = $this->getTrmApiUrl();
-    $response = wp_remote_get($apiUrl, array('headers' => ['Cache-Control' => 'no-cache']));
+    $response = wp_remote_get($apiUrl/*, array('headers' => ['Cache-Control' => 'no-cache'])*/);
 
     if (is_wp_error($response)) {
       error_log('Error fetching TRM: ' . $response->get_error_message());
