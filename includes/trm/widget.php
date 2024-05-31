@@ -48,13 +48,16 @@ function inter_trm_dashboard_widget_function()
               maximumFractionDigits: 2
             }).format(trm)
 
-            $('#inter_update_trm_button').html(trmRes.message);
-            $('#inter_update_trm_result').html(trm); // Actualizar el valor de la TRM en el widget
-
-            $('#inter_update_trm_button').html(textButton);
-            e.target.classList.add('button-secundary');
-            e.target.classList.remove('button-disabled');
-            e.target.disabled = false;
+            if (trm) {
+              $('#inter_update_trm_result').html(trm);
+            }
+            $('#inter_update_trm_button').html(trmRes.message); // Actualizar el valor de la TRM en el widget
+            setTimeout(() => {
+              $('#inter_update_trm_button').html(textButton)
+              e.target.classList.add('button-secundary');
+              e.target.classList.remove('button-disabled');
+              e.target.disabled = false;
+            }, 3000);
           },
           error: function() {
             $('#inter_update_trm_button').html('Error al intentar actualizar');
